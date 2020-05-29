@@ -1,5 +1,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+import utils
+
 
 class App:
     """
@@ -59,6 +61,11 @@ def index():
 @app.route("/notes/")
 def notes():
     return "<br/>".join(["Eat", "Drink", "Sleep"])
+
+
+@app.route("/example/")
+def example():
+    return utils.render("./example.html")
 
 
 app.run()
